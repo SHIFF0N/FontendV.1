@@ -1,0 +1,19 @@
+.comment-header{
+    margin-right: 4px;
+    color: var(--yt-spec-text-primary);
+    margin-bottom: 2px;
+    font-size: 1.3rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+}
+.text-dot{
+    white-space: nowrap;  
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+@media only screen and (max-width: 600px) {
+    .center-xs {
+        margin: auto;
+        width: 50%; 
+      }
+}
