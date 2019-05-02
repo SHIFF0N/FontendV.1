@@ -2,17 +2,17 @@
   <v-content class="bp-img">
     <v-layout row wrap>
       <v-flex>
-        <Imageaddform/>
+        <Home/>
       </v-flex>
     </v-layout>
   </v-content>
 </template>
 <script>
-import Imageaddform from "@/components/homepage/Imageaddform";
+import Home from "@/components/homepage/Home";
 
 export default {
   components: {
-    Imageaddform
+    Home,
   }
 };
 </script>

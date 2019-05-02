@@ -36,5 +36,12 @@ export default new Router({
         return import('./views/ViewCalendar.vue')
       }
     },
+    {
+      path: '/ViewProfile',
+      name: 'viewprofile',
+      component: function () { 
+        return import('./views/ViewProfile.vue')
+      }
+    },
   ]
 })

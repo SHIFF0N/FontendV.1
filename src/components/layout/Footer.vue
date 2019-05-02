@@ -9,7 +9,7 @@
       tile
     >
       <v-card-actions class="bg-img">
-        &copy;2018 — <strong>Vuetify</strong>
+        &copy;2018 — <strong>SoftWareEngineering</strong>
       </v-card-actions>
     </v-card>
   </v-footer>
