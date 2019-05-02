@@ -8,12 +8,12 @@
       <v-flex>
         <v-data-table :headers="headers" :items="desserts" :expand="expand" item-key="name">
           <template v-slot:items="props">
-            <tr @click="props.expanded = !props.expanded">
-              <td>{{ props.item.name }}</td>
-              <td class="text-xs-right">{{ props.item.Total }}</td>
-              <td class="text-xs-right">{{ props.item.ComputerArchitecture}}</td>
-              <td class="text-xs-right">{{ props.item.OperatingSystem}}</td>
-              <td class="text-xs-right">{{ props.item.Componentbased}}</td>
+            <tr>
+              <td>{{ props.item.ID }}</td>
+              <td>{{ props.item.namecourse}}</td>
+              <td>{{ props.item.groupname}}</td>
+              <td>{{ props.item.hour}}</td>
+              <td>{{ props.item.hourdot}}</td>
             </tr>
           </template>
         </v-data-table>
@@ -41,66 +41,66 @@ export default {
       expand: false,
       headers: [
         {
-          text: "Name",
+          text: "รหัสหลักสูตร",
           sortable: false
         },
         {
-          text: "Total",
+          text: "ชื่อหลักสูตร",
           sortable: false
         },
         {
-          text: "Computer Architecture",
+          text: "กลุ่มหลักสูตร",
           sortable: false
         },
         {
-          text: "Operating System",
+          text: "ชั่วโมง/(ที่เรียน)",
           sortable: false
         },
         {
-          text: "Component-based",
+          text: "คาบ/(ละ)",
           sortable: false
         }
-        // { text: 'Calories', value: 'calories' },
-        // { text: 'Fat (g)', value: 'fat' },
-        // { text: 'Carbs (g)', value: 'carbs' },
-        // { text: 'Protein (g)', value: 'protein' },
-        // { text: 'Iron (%)', value: 'iron' }
       ],
       desserts: [
         {
           name: "Chisanupong Premsri",
-          Total: 34,
-          ComputerArchitecture: 6.0,
-          OperatingSystem: 24,
-          Componentbased: 4.0
+          ID: 92874,
+          namecourse: "switf",
+          groupname: "cs",
+          hour: 4.0,
+          hourdot: 1,
         },
         {
           name: "Sirapop Saenhom",
-          Total: 237,
-          ComputerArchitecture: 9.0,
-          OperatingSystem: 37,
-          Componentbased: 4.3
+          ID: 72840,
+          namecourse: "c##",
+          groupname: "cs",
+          hour: 4.0,
+          hourdot: 3,
         },
         {
           name: "Thanatorn Sungthong",
-          Total: 262,
-          ComputerArchitecture: 16.0,
-          OperatingSystem: 23,
-          Componentbased: 6.0
+          ID: 32964,
+          namecourse: "css",
+          groupname: "cg",
+          hour: 6.0,
+          hourdot: 4,
         },
         {
           name: "Jiraphat Pongkasikit",
-          Total: 305,
-          ComputerArchitecture: 3.7,
-          OperatingSystem: 67,
-          Componentbased: 4.3
+          ID: 30590,
+          namecourse: "java",
+          groupname: "cs",
+          hour: 3.0,
+          hourdot: 3,
         },
         {
           name: "Worapong Rattaaudomsawas",
-          Total: 356,
-          ComputerArchitecture: 16.0,
-          OperatingSystem: 49,
-          Componentbased: 3.9
+          ID: 35678,
+          namecourse: "laravel",
+          groupname: "cs",
+          hour: 5,
+          hourdot: 1,
         }
       ]
     };

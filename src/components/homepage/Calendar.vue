@@ -1,7 +1,7 @@
 <template>
   <v-layout class="mrt-md-64 mrt-xs-45 mrt-sm-70" >
     <v-flex>
-      <v-toolbar class="indigo white--text headline"><v-toolbar-title>Register Student Records</v-toolbar-title>
+      <v-toolbar class="blue darken-1 white--text headline"><v-toolbar-title>Register Student Records</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-spacer></v-spacer>
       <v-spacer></v-spacer>
@@ -69,6 +69,12 @@
           </template>
         </v-calendar>
       </v-sheet>
+      <v-btn color="success">
+          <v-icon>add</v-icon>add
+        </v-btn>
+        <v-btn color="error">
+          <v-icon>delete</v-icon>delete
+        </v-btn>
       <v-btn color="primary" dark>
           <v-icon>print</v-icon>print
         </v-btn>

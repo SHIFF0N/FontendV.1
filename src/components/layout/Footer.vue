@@ -9,7 +9,7 @@
       tile
     >
       <v-card-actions class="bg-img">
-        &copy;2018 — <strong>SoftWareEngineering</strong>
+        &copy;2018 — <strong>SoftWareEngineering'59</strong>
       </v-card-actions>
     </v-card>
   </v-footer>
@@ -18,14 +18,7 @@
 <script>
   export default {
     data: () => ({
-      icons: [
-        'fab fa-facebook',
-        'fab fa-twitter',
-        'fab fa-google-plus',
-        'fab fa-linkedin',
-        'fab fa-instagram'
-      ],
-      text:"SoftWareEngineering'59",
+      
     })
   }
 </script>

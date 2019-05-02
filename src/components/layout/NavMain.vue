@@ -24,7 +24,7 @@
               </v-list-tile-content>
             </v-list-tile>
             <v-list-tile v-for="(child, i) in item.children" :key="i">
-              <!--ใส่@คลิก-->
+              
               <v-list-tile-action v-if="child.icon">
                 <v-icon>{{ child.icon }}</v-icon>
               </v-list-tile-action>
@@ -34,7 +34,7 @@
             </v-list-tile>
           </v-list-group>
           <v-list-tile v-else :key="item.text">
-            <!--ใส่@คลิก-->
+            
             <v-list-tile-action>
               <v-icon>{{ item.icon }}</v-icon>
             </v-list-tile-action>
@@ -49,18 +49,38 @@
     <v-toolbar class="bg-img" dark app :clipped-left="$vuetify.breakpoint.mdAndUp" fixed>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
 
-      <!-- <template v-slot:extension>
-      <v-toolbar-title class="white--text">Title</v-toolbar-title>
-      </template> -->
-
       <v-spacer></v-spacer>
 
-      <v-toolbar-items>
-        <v-btn flat>
-          <v-icon id="place">logout</v-icon>logout
-        </v-btn>
-      </v-toolbar-items>
+      <v-btn color="primary" dark @click="dialog = true"><v-icon></v-icon>LOGIN</v-btn>
     </v-toolbar>
+
+    <v-dialog  v-model="dialog" persistent max-width="600px">
+      <v-card>
+        <v-card-title class="or-img white--text headline" >
+          <span class="headline">Login</span>
+        </v-card-title>
+        <v-card-text>
+          <v-container grid-list-md>
+            <v-layout wrap>
+              <v-flex xs12 sm6 md4>
+              </v-flex>
+              <v-flex xs12>
+                <v-text-field label="Username*" required></v-text-field>
+              </v-flex>
+              <v-flex xs12>
+                <v-text-field label="Password*" type="password" required></v-text-field>
+              </v-flex>
+            </v-layout>
+          </v-container>
+          <small>*indicates required field</small>
+        </v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn color="blue darken-1" flat @click="dialog = false">Login</v-btn>
+          <v-btn color="blue darken-1" flat @click="dialog = false">Cancel</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </div>
 </template>
 
@@ -97,12 +117,11 @@ export default {
         model: false,
         children: [
           { icon: "perm_contact_calendar", text: "Teacher Table" },
-          { icon: "today", text: "Student Table" },
+          { icon: "today", text: "Student Table" }
         ]
       },
 
-      { icon: "assignment_ind", text: "Personal Information" },
-
+      { icon: "assignment_ind", text: "Personal Information",url:'/ViewProfile' },
 
       { icon: "settings", text: "Settings" },
 
@@ -113,6 +132,11 @@ export default {
   }),
   props: {
     source: String
+  },
+  methods: {
+    on() {
+      this.dialog = true;
+    }
   }
 };
 </script>
@@ -123,6 +147,14 @@ export default {
 }
 .bg-img {
   background-image: url("https://cdn.vuetifyjs.com/images/parallax/material.jpg");
+  background-size: cover;
+}
+.or-img{
+  background-image: url("https://cdn.vuetifyjs.com/images/parallax/material2.jpg");
+  background-size: cover;
+}
+.gr-img{
+  background-image: url("https://cdn.dribbble.com/users/588874/screenshots/2341875/dribbble.png");
   background-size: cover;
 }
 </style>
