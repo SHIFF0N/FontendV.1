@@ -23,8 +23,13 @@
                 <v-list-tile-title>{{ item.text }}</v-list-tile-title>
               </v-list-tile-content>
             </v-list-tile>
-            <v-list-tile v-for="(child, i) in item.children" :key="i">
-              
+            <v-list-tile
+              v-for="(child, i) in item.children"
+              :key="i"
+              @click="$router.push(child.url)"
+            >
+              <!-- เพิ่ม @click="$router.push(child.url)" เพื่อให้เวลากดไปหน้าอื่น
+              -->
               <v-list-tile-action v-if="child.icon">
                 <v-icon>{{ child.icon }}</v-icon>
               </v-list-tile-action>
@@ -33,8 +38,8 @@
               </v-list-tile-content>
             </v-list-tile>
           </v-list-group>
-          <v-list-tile v-else :key="item.text">
-            
+          <v-list-tile v-else :key="item.text" @click="$router.push(item.url)">
+            <!-- เพิ่ม @click="$router.push(item.url)" เพื่อให้เวลากดไปหน้าอื่น-->
             <v-list-tile-action>
               <v-icon>{{ item.icon }}</v-icon>
             </v-list-tile-action>
@@ -51,19 +56,20 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn color="primary" dark @click="dialog = true"><v-icon></v-icon>LOGIN</v-btn>
+      <v-btn color="primary" dark @click="dialog = true">
+        <v-icon></v-icon>LOGIN
+      </v-btn>
     </v-toolbar>
 
-    <v-dialog  v-model="dialog" persistent max-width="600px">
+    <v-dialog v-model="dialog" persistent max-width="600px">
       <v-card>
-        <v-card-title class="or-img white--text headline" >
+        <v-card-title class="or-img white--text headline">
           <span class="headline">Login</span>
         </v-card-title>
         <v-card-text>
           <v-container grid-list-md>
             <v-layout wrap>
-              <v-flex xs12 sm6 md4>
-              </v-flex>
+              <v-flex xs12 sm6 md4></v-flex>
               <v-flex xs12>
                 <v-text-field label="Username*" required></v-text-field>
               </v-flex>
@@ -96,7 +102,11 @@ export default {
         text: "Register",
         model: false,
         children: [
-          { icon: "description", text: "Student records" },
+          {
+            icon: "description",
+            text: "Student records",
+            url: "/ViewRegister"
+          },
           { icon: "chrome_reader_mode", text: "Financial records of students" }
         ]
       },
@@ -121,7 +131,11 @@ export default {
         ]
       },
 
-      { icon: "assignment_ind", text: "Personal Information",url:'/ViewProfile' },
+      {
+        icon: "assignment_ind",
+        text: "Personal Information",
+        url: "/ViewProfile"
+      },
 
       { icon: "settings", text: "Settings" },
 
@@ -149,11 +163,11 @@ export default {
   background-image: url("https://cdn.vuetifyjs.com/images/parallax/material.jpg");
   background-size: cover;
 }
-.or-img{
+.or-img {
   background-image: url("https://cdn.vuetifyjs.com/images/parallax/material2.jpg");
   background-size: cover;
 }
-.gr-img{
+.gr-img {
   background-image: url("https://cdn.dribbble.com/users/588874/screenshots/2341875/dribbble.png");
   background-size: cover;
 }
