@@ -1,8 +1,7 @@
 <template>
-  <v-content>
+  <v-content class="bp-img">
     <v-layout row wrap>
       <v-flex>
-        <Imageaddform/>
         <Imageaddform/>
       </v-flex>
     </v-layout>

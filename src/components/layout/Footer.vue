@@ -8,24 +8,7 @@
       flat
       tile
     >
-      <!--<v-card-title class="cyan">
-        <strong class="subheading">{{text}}</strong>
-
-        <v-spacer></v-spacer>
-
-        <v-btn
-          v-for="icon in icons"
-          :key="icon"
-          class="mx-3"
-          dark
-          icon
-        >
-          <v-icon size="24px">{{ icon }}</v-icon>
-        </v-btn>
-      </v-card-title>-->
-
-<!---->
-      <v-card-actions class="indigo darken-3 justify-center">
+      <v-card-actions class="bg-img">
         &copy;2018 — <strong>Vuetify</strong>
       </v-card-actions>
     </v-card>
@@ -46,3 +29,9 @@
     })
   }
 </script>
+<style>
+.bg-img {
+  background-image: url("https://cdn.vuetifyjs.com/images/parallax/material.jpg");
+  background-size: cover;
+}
+</style>

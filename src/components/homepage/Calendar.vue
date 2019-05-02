@@ -1,6 +1,13 @@
 <template>
-  <v-layout mrt-55>
+  <v-layout class="mrt-md-64 mrt-xs-45 mrt-sm-70" >
     <v-flex>
+      <v-toolbar class="indigo white--text headline"><v-toolbar-title>Register Student Records</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-spacer></v-spacer>
+      <v-spacer></v-spacer>
+      <v-spacer></v-spacer>
+      <v-text-field append-icon="search" label="Search" single-line hide-details></v-text-field>
+      </v-toolbar>
       <v-sheet height="500">
         <v-calendar
           :now="today"
@@ -62,6 +69,9 @@
           </template>
         </v-calendar>
       </v-sheet>
+      <v-btn color="primary" dark>
+          <v-icon>print</v-icon>print
+        </v-btn>
     </v-flex>
   </v-layout>
 </template>
@@ -104,7 +114,7 @@
         {
           title: 'New Year',
           details: 'Eat chocolate until you pass out',
-          date: '2019-01-01',
+          date: '2019-01-02',
           open: false
         },
         {

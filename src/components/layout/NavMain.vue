@@ -46,12 +46,12 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-toolbar class="indigo white--text headline" dark app :clipped-left="$vuetify.breakpoint.mdAndUp" fixed>
+    <v-toolbar class="bg-img" dark app :clipped-left="$vuetify.breakpoint.mdAndUp" fixed>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
 
       <!-- <template v-slot:extension>
       <v-toolbar-title class="white--text">Title</v-toolbar-title>
-      </template>-->
+      </template> -->
 
       <v-spacer></v-spacer>
 
@@ -60,22 +60,6 @@
           <v-icon id="place">logout</v-icon>logout
         </v-btn>
       </v-toolbar-items>
-
-      <!-- <v-btn icon>
-      <v-icon>search</v-icon>
-    </v-btn>
-
-    <v-btn icon>
-      <v-icon>apps</v-icon>
-    </v-btn>
-
-    <v-btn icon>
-      <v-icon>refresh</v-icon>
-    </v-btn>
-
-    <v-btn icon>
-      <v-icon>more_vert</v-icon>
-      </v-btn>-->
     </v-toolbar>
   </div>
 </template>
@@ -86,18 +70,6 @@ export default {
     dialog: false,
     drawer: false,
     items: [
-      // {
-      //   icon: "keyboard_arrow_up",
-      //   "icon-alt": "keyboard_arrow_down",
-      //   text: "Status",
-
-      //   model: false,
-      //   children: [
-      //     { icon: "perm_identity", text: "Admin" },
-      //     { icon: "accessibility", text: "Teacher" },
-      //     { icon: "face", text: "Student" }
-      //   ]
-      // },
       {
         icon: "keyboard_arrow_up",
         "icon-alt": "bookmarks",
@@ -131,10 +103,6 @@ export default {
 
       { icon: "assignment_ind", text: "Personal Information" },
 
-      // { icon:"add",text: "Create" },
-      //     { icon:"insert_drive_file",text: "Read" },
-      //     { icon:"update",text: "Update" },
-      //     { icon:"delete",text: "Delete" },
 
       { icon: "settings", text: "Settings" },
 
@@ -152,5 +120,9 @@ export default {
 <style>
 .hg70 {
   height: 120px !important;
+}
+.bg-img {
+  background-image: url("https://cdn.vuetifyjs.com/images/parallax/material.jpg");
+  background-size: cover;
 }
 </style>

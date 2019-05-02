@@ -1,9 +1,22 @@
 <template>
   <v-content>
     <v-layout row wrap>
-      <v-toolbar class="indigo white--text headline">
+      <v-toolbar class="blue darken-1 white--text headline">
         <v-toolbar-title>Course Records</v-toolbar-title>
         <v-spacer></v-spacer>
+      </v-toolbar>
+      <v-flex>
+        <v-data-table :headers="headers" :items="desserts" :expand="expand" item-key="name">
+          <template v-slot:items="props">
+            <tr @click="props.expanded = !props.expanded">
+              <td>{{ props.item.name }}</td>
+              <td class="text-xs-right">{{ props.item.Total }}</td>
+              <td class="text-xs-right">{{ props.item.ComputerArchitecture}}</td>
+              <td class="text-xs-right">{{ props.item.OperatingSystem}}</td>
+              <td class="text-xs-right">{{ props.item.Componentbased}}</td>
+            </tr>
+          </template>
+        </v-data-table>
         <v-btn color="success">
           <v-icon>add</v-icon>add
         </v-btn>
@@ -16,23 +29,7 @@
         <v-btn color="primary" dark>
           <v-icon>print</v-icon>print
         </v-btn>
-      </v-toolbar>
-      <v-data-table :headers="headers" :items="desserts" :expand="expand" item-key="name">
-        <template v-slot:items="props">
-          <tr @click="props.expanded = !props.expanded">
-            <td>{{ props.item.name }}</td>
-            <td class="text-xs-right">{{ props.item.Total }}</td>
-            <td class="text-xs-right">{{ props.item.ComputerArchitecture}}</td>
-            <td class="text-xs-right">{{ props.item.OperatingSystem}}</td>
-            <td class="text-xs-right">{{ props.item.Componentbased}}</td>
-          </tr>
-        </template>
-        <template v-slot:expand="props">
-          <v-card flat>
-            <v-card-text>Peek-a-boo!</v-card-text>
-          </v-card>
-        </template>
-      </v-data-table>
+      </v-flex>
     </v-layout>
   </v-content>
 </template>
@@ -111,8 +108,4 @@ export default {
 };
 </script>
 <style>
-.bg-img {
-  background-image: url("https://s.isanook.com/tr/0/ud/281/1409907/15.jpg");
-  background-size: cover;
-}
 </style>
